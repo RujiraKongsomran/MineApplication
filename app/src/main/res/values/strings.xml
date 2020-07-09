@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">MineApplication</string>
+    <string name="about">about</string>
+    <string name="settings">settings</string>
 </resources>
