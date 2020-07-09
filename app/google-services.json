@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "472704705080",
+    "firebase_url": "https://biwapplication.firebaseio.com",
+    "project_id": "biwapplication",
+    "storage_bucket": "biwapplication.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:472704705080:android:96abfded91dd912f873ccd",
+        "android_client_info": {
+          "package_name": "com.rujirakongsomran.mineapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "472704705080-kjtvd52vbtnfp0vfvh8ne0eoujul9ujg.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.rujirakongsomran.mineapplication",
+            "certificate_hash": "ab7961a6bc2a018e99a8ce1b230074be85362154"
+          }
+        },
+        {
+          "client_id": "472704705080-h23jb4si573k937va67n9410mpn6duoa.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDLGbUVZIwBakWhutTpmmLGHdHawctT9Gw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "472704705080-h23jb4si573k937va67n9410mpn6duoa.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
