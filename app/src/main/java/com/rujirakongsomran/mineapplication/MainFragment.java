@@ -1,10 +1,17 @@
 package com.rujirakongsomran.mineapplication;
 
+import android.content.Context;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
+import android.util.DisplayMetrics;
+import android.view.Display;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -14,6 +21,9 @@ import android.view.ViewGroup;
  * create an instance of this fragment.
  */
 public class MainFragment extends Fragment {
+
+    private PaintView paintView;
+    Context mContext;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -49,6 +59,7 @@ public class MainFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setHasOptionsMenu(true);
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
@@ -59,6 +70,39 @@ public class MainFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_main, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_main, container, false);
+        initInstances(rootView);
+        return rootView;
+    }
+
+    private void initInstances(View rootView) {
+        paintView = (PaintView) rootView.findViewById(R.id.paintView);
+        DisplayMetrics metrics = getResources().getDisplayMetrics();
+        paintView.init(metrics);
+    }
+
+    @Override
+    public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
+        inflater.inflate(R.menu.main_menu, menu);
+        super.onCreateOptionsMenu(menu, inflater);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.normal:
+                paintView.normal();
+                return true;
+            case R.id.emboss:
+                paintView.emboss();
+                return true;
+            case R.id.blur:
+                paintView.blur();
+                return true;
+            case R.id.clear:
+                paintView.clear();
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }
